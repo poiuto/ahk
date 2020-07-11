@@ -1,6 +1,9 @@
 CapsLock::BS
 LShift & RShift:: CapsLock
 
+; always on top
+^SPACE:: Winset, Alwaysontop, , A
+
 ;RAlt
 >!h::Send {Left}
 >!j::Send {Down}
