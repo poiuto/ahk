@@ -10,9 +10,10 @@ LShift & RShift:: CapsLock
 >!k::Send {Up}
 >!l::Send {Right}
 >!c::Send {Media_Play_Pause}
->!x::send {Media_Next}
->!z::send {Media_Prev}
->!a::SoundSet, -2
->!s::SoundSet, +2
+>!x::Send {Media_Next}
+>!z::Send {Media_Prev}
+>!a::Send {Volume_Down}
+>!s::Send {Volume_Up}
+>!d::Send {Volume_Mute}
 
 >!g::Run "https://google.com"
