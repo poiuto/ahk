@@ -5,6 +5,7 @@ LShift & RShift:: CapsLock
 ^SPACE:: Winset, Alwaysontop, , A
 
 ;RAlt
+RAlt::return
 >!h::Send {Left}
 >!j::Send {Down}
 >!k::Send {Up}
