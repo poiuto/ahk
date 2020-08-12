@@ -2,7 +2,7 @@ CapsLock::BS
 LShift & RShift:: CapsLock
 
 ; always on top
-^SPACE:: Winset, Alwaysontop, , A
+^LWin:: Winset, Alwaysontop, , A
 
 ;RAlt
 RAlt::return
