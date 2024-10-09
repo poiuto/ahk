@@ -3,23 +3,25 @@
 ; always focus ====================================
 #Persistent
 
-title := 0
-
-Focus:
-	WinActivate, %title%
-return
+id := 0
 
 ^LWin::
-if title = 0
+if id = 0
 {
-	WinGetActiveTitle, title
+	WinGet, id, ID, A
 	SetTimer, Focus, 50
 }
 else
 {
-	title := 0
+	id := 0
 	SetTimer, Focus, Off
 }
+return
+
+Focus:
+tmp := % "ahk_id" id
+if not WinActive(%tmp%)
+	WinActivate, %tmp%
 return
 
 ; caps to escape and control ====================================
