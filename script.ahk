@@ -1,4 +1,28 @@
-; caps to escape and control
+#SingleInstance
+
+; always focus ====================================
+#Persistent
+
+title := 0
+
+Focus:
+	WinActivate, %title%
+return
+
+^LWin::
+if title = 0
+{
+	WinGetActiveTitle, title
+	SetTimer, Focus, 50
+}
+else
+{
+	title := 0
+	SetTimer, Focus, Off
+}
+return
+
+; caps to escape and control ====================================
 SetCapsLockState Off
 
 CapsLock::
@@ -18,10 +42,10 @@ CapsLock up::
   
 LShift & RShift:: CapsLock
 
-; always on top
-^LWin:: Winset, Alwaysontop, , A
+; always on top ====================================
+^LAlt:: Winset, Alwaysontop, , A
 
-;RAlt
+;RAlt ====================================
 RAlt::return
 >!h::Send {Left}
 >!j::Send {Down}
@@ -35,22 +59,3 @@ RAlt::return
 >!d::Send {Volume_Mute}
 
 >!g::Run "https://google.com"
-
-/* v2
-*CapsLock::
-{
-    Send "{LControl down}"
-}
-
-*CapsLock up::
-{
-    Send "{LControl Up}"
-
-    if (A_PriorKey=="CapsLock"){
-	if (A_TimeSincePriorHotkey < 1000)
-		Suspend "1"
-		Send "{Esc}"
-		Suspend "0"
-	}
-}
-*/
